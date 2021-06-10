@@ -3,5 +3,40 @@
   padding-bottom: 20px;
   text-align: center;
 }
+.header form .d-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header form .d-flex input {
+  outline: none;
+  font-size: 1rem;
+  border: 1px solid silver;
+  border-right: none;
+  border-top-left-radius: 5rem;
+  border-bottom-left-radius: 5rem;
+  padding: 10px 0 10px 10px;
+}
+.header form .d-flex button {
+  background-color: transparent;
+  border: 1px solid silver;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-left: none;
+  height: 41px;
+  padding-right: 10px;
+  border-top-right-radius: 5rem;
+  border-bottom-right-radius: 5rem;
+}
+.header form .d-flex button img {
+  width: 15px;
+  margin: 5px;
+  cursor: pointer;
+}
+.header .city-title {
+  margin-top: 25px;
+}
 
 /*# sourceMappingURL=Header.css.map */

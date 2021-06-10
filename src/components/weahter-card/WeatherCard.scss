@@ -11,6 +11,10 @@
   cursor: pointer;
   transition: linear all 0.2s;
 
+  a {
+    text-decoration: none !important;
+  }
+
   img {
     transition: linear all 0.2s;
     width: 50%;
@@ -47,6 +51,5 @@
     }
 
   }
-
 
 }

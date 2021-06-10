@@ -11,6 +11,9 @@
   cursor: pointer;
   transition: linear all 0.2s;
 }
+.card a {
+  text-decoration: none !important;
+}
 .card img {
   transition: linear all 0.2s;
   width: 50%;

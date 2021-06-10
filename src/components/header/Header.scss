@@ -2,4 +2,48 @@
   padding-top: 20px;
   padding-bottom: 20px;
   text-align: center;
+
+  form {
+
+    .d-flex {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      input {
+        outline: none;
+        font-size: 1rem;
+        border: 1px solid silver;
+        border-right: none;
+        border-top-left-radius: 5rem;
+        border-bottom-left-radius: 5rem;
+        padding: 10px 0 10px 10px;
+      }
+
+      button {
+        background-color: transparent;
+        border: 1px solid silver;
+        outline: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-left: none;
+        height: 41px;
+        padding-right: 10px;
+        border-top-right-radius: 5rem;
+        border-bottom-right-radius: 5rem;
+
+        img {
+          width: 15px;
+          margin: 5px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .city-title {
+    margin-top: 25px;
+  }
+
 }
