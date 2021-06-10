@@ -9,7 +9,7 @@ const App = () => {
             <section className="hero"/>
             <main>
                 <section>
-                    <h1>Oh Hai, React</h1>
+                    <h1>Oh Hai, React JS</h1>
                 </section>
                 <img src={rain} alt="rain" width="250"/>
                 <Recipes/>
