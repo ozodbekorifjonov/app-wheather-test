@@ -1,5 +1,4 @@
-const testVar = {
-    ironIngot: 1,
-};
+import {render} from "react-dom";
+import App from "./components/App";
 
-console.log(testVar);
+render(<App/>, document.getElementById("root"))
