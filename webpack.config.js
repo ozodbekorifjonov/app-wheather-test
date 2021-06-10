@@ -73,8 +73,6 @@ module.exports = {
         hot: true,
         compress: false,
         port: 3000,
-        historyApiFallback: {
-            index: 'index.html'
-        }
+        historyApiFallback: true
     }
 }
