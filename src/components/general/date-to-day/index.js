@@ -1,0 +1,1 @@
+export {DateToDay} from './dateToDay';

@@ -14,6 +14,13 @@
 .card a {
   text-decoration: none !important;
 }
+.card a p {
+  color: black;
+  margin-bottom: 0 !important;
+}
+.card a h5 {
+  color: silver;
+}
 .card img {
   transition: linear all 0.2s;
   width: 50%;

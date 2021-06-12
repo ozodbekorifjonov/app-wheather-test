@@ -1,10 +1,15 @@
 import React, {useEffect, useRef, useState} from "react";
 import "./Header.scss";
 import search from "../../images/search.svg";
+import Skeleton from 'react-loading-skeleton';
+import {useDispatch} from "react-redux";
+import {fetchWeatherData} from "../../slices/recipes";
 
 export function Header(props) {
 
     const searchRef = useRef();
+    const {cityName, changeCityName, weatherData} = props;
+    const dispatch = useDispatch();
 
     useEffect(() => {
         if (searchRef.current) {
@@ -12,24 +17,15 @@ export function Header(props) {
         }
     }, []);
 
-    const [inputValue, setInputValue] = useState("");
-
     const handleChange = (e) => {
-        setInputValue(e.target.value);
-
-        if (e.target.value === "") {
-            // dispatch(fetchGifs());
-        }
+        changeCityName(e.target.value)
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (inputValue !== "") {
-            // dispatch(searchGifs(inputValue));
-        } else {
-            // dispatch(fetchGifs());
+        if (cityName !== "") {
+            dispatch(fetchWeatherData(cityName))
         }
-
     };
 
     return (
@@ -37,17 +33,18 @@ export function Header(props) {
             <div>
                 <form onSubmit={handleSubmit} noValidate autoComplete="off" className="form">
                     <div className="d-flex">
-                        <input value={inputValue} ref={searchRef} onChange={handleChange} name="search"
+                        <input ref={searchRef} onChange={handleChange} name="search"
                                className="w-100"
                                placeholder="Search..."/>
-                        <button className="search-btn" disabled={!inputValue}>
+                        <button className="search-btn" disabled={!cityName}>
                             <img src={search} alt="search"/>
                         </button>
                     </div>
                 </form>
-
             </div>
-            <h2 className="city-title">Tashkent, UZ</h2>
+            <h2 className="city-title">{weatherData.cityData ? weatherData.cityData.name + `,` :
+                <Skeleton width={100}/>} {weatherData.cityData ? weatherData.cityData.country :
+                <Skeleton width={20}/>}</h2>
         </div>
     )
 }

@@ -2,18 +2,20 @@ import sunny from "../../../images/001-sun.svg";
 import rainy from "../../../images/002-rain.svg";
 import cloudy from "../../../images/003-cloudy.svg";
 import snowy from "../../../images/004-snowy.svg";
+import defaultImage from "../../../images/default.svg";
 
-export const WeatherImage = (image) => {
-    switch (image) {
-        case 'sunny':
+export const WeatherImage = (weather) => {
+
+    switch (weather) {
+        case 'Clear':
             return sunny;
-        case 'rainy':
+        case 'Rain':
             return rainy;
-        case 'cloudy':
+        case 'Clouds':
             return cloudy;
-        case 'snowy':
+        case 'Snow':
             return snowy;
         default:
-            return null
+            return defaultImage;
     }
 }

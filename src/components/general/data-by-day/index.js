@@ -1,0 +1,1 @@
+export {DataByDay} from './dataByDay';
