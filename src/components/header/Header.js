@@ -1,9 +1,9 @@
-import React, {useEffect, useRef, useState} from "react";
+import React, {useEffect, useRef} from "react";
 import "./Header.scss";
 import search from "../../images/search.svg";
-import Skeleton from 'react-loading-skeleton';
 import {useDispatch} from "react-redux";
 import {fetchWeatherData} from "../../slices/recipes";
+import Title from "../title/Title";
 
 export function Header(props) {
 
@@ -42,9 +42,7 @@ export function Header(props) {
                     </div>
                 </form>
             </div>
-            <h2 className="city-title">{weatherData.cityData ? weatherData.cityData.name + `,` :
-                <Skeleton width={100}/>} {weatherData.cityData ? weatherData.cityData.country :
-                <Skeleton width={20}/>}</h2>
+            <Title weatherData={weatherData}/>
         </div>
     )
 }

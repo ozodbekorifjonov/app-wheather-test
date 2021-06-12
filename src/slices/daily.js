@@ -1,47 +1,45 @@
 import {createSlice} from '@reduxjs/toolkit'
 import {toast} from "react-toastify";
-import {DataByDay} from "../components/general";
+import {DailyForecast} from "../components/general";
 
 export const initialState = {
     loading: false,
     hasErrors: false,
-    weatherData: [],
-    searchResult: ""
+    dailyData: [],
 }
 
-const recipesSlice = createSlice({
-    name: 'recipes',
+const dailySlice = createSlice({
+    name: 'daily',
     initialState,
     reducers: {
-        getRecipes: state => {
+        getDaily: state => {
             state.loading = true
         },
-        getRecipesSuccess: (state, action) => {
-            state.weatherData = action.payload
+        getDailySuccess: (state, action) => {
+            state.dailyData = action.payload
             state.loading = false
             state.hasErrors = false
         },
-        getRecipesFailure: state => {
+        getDailyFailure: state => {
             state.loading = false
             state.hasErrors = true
         },
-        getCityName: (state, {payload}) => {
-            state.searchResult = payload
+        clearDailyData: state => {
+            state.dailyData = [];
         }
     },
 })
 
-export const {getRecipes, getRecipesSuccess, getRecipesFailure, getCityName} = recipesSlice.actions
+export const {getDaily, getDailySuccess, getDailyFailure, clearDailyData} = dailySlice.actions
 
-export const recipesSelector = state => state.recipes
+export const dailySelector = state => state.daily
 
-export default recipesSlice.reducer
+export default dailySlice.reducer
 
-export function fetchWeatherData(cityName) {
+export function fetchDailyData(cityName, req) {
 
     return async dispatch => {
-
-        dispatch(getRecipes())
+        dispatch(getDaily())
 
         const apiKey = process.env.API_KEY;
 
@@ -56,12 +54,11 @@ export function fetchWeatherData(cityName) {
             if (response.cod === "404") {
                 toast.error(response.message)
             } else {
-                dispatch(getRecipesSuccess(DataByDay(data)))
-                dispatch(getCityName(cityName))
+                dispatch(getDailySuccess(DailyForecast(data, req)))
             }
 
         } catch (error) {
-            dispatch(getRecipesFailure(error))
+            dispatch(getDailyFailure(error))
         }
     }
 }

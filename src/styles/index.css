@@ -15,7 +15,79 @@ body .d-flex-justify-center-row {
   justify-content: space-between;
   flex-direction: row;
 }
+body .card {
+  width: 100%;
+  min-height: 200px;
+  box-shadow: rgba(0, 0, 0, 0.08) 0 4px 12px;
+  background-color: white;
+  margin: 10px;
+  border-radius: 5px;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 15px 10px;
+  cursor: pointer;
+  transition: linear all 0.2s;
+}
+body .card a {
+  text-decoration: none !important;
+}
+body .card a p {
+  color: black;
+  margin-bottom: 0 !important;
+}
+body .card a h5 {
+  color: silver;
+}
+body .card img {
+  transition: linear all 0.2s;
+  width: 50%;
+  margin-top: 5px;
+}
+body .card .day-title {
+  margin: 10px 0;
+  transition: linear all 0.2s;
+  font-size: 1.2rem;
+}
+body .card .text-line {
+  margin-top: 10px;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+body .card .text-line .text-bold {
+  margin-right: 5px;
+  color: black;
+}
+body .card .text-line .text-light {
+  margin-left: 5px;
+  color: #716a6a;
+}
+body .card:hover {
+  box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
+}
+body .card:hover img {
+  transform: scale(1.15);
+}
 
+@media only screen and (max-width: 600px) {
+  body {
+    padding: 20px 20px;
+  }
+  body .box-center {
+    width: 100%;
+    height: unset;
+    position: relative;
+    top: unset;
+    left: unset;
+    -webkit-transform: unset;
+    transform: unset;
+  }
+  body .box-center .d-flex-justify-center-row {
+    flex-direction: column;
+  }
+  body .box-center .d-flex-justify-center-row .card {
+    margin: 10px 0;
+  }
+}
 .box-center {
   background-size: cover;
   background-position: center;

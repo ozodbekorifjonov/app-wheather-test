@@ -1,0 +1,20 @@
+.link {
+  text-decoration: none;
+}
+.link h4 {
+  color: black;
+}
+
+.day {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+.day .city-title {
+  margin-top: 25px;
+}
+.day h4 {
+  color: #716a6a;
+}
+
+/*# sourceMappingURL=Day.css.map */

@@ -4,6 +4,8 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const {CleanWebpackPlugin} = require("clean-webpack-plugin");
 
+const Dotenv = require('dotenv-webpack');
+
 let mode = "development";
 let target = "web";
 
@@ -13,6 +15,7 @@ const plugins = [
     new HtmlWebpackPlugin({
         template: "./src/index.html"
     }),
+    new Dotenv()
 ]
 
 if (process.env.NODE_ENV === "production") {
@@ -67,6 +70,10 @@ module.exports = {
 
     resolve: {
         extensions: [".js", ".jsx"]
+    },
+
+    performance: {
+        hints: false,
     },
 
     devtool: "source-map",

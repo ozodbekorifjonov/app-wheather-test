@@ -8,10 +8,10 @@ const Home = () => {
 
     const dispatch = useDispatch()
     const [cityName, setCityName] = useState("Tashkent")
-    const {weatherData} = useSelector(recipesSelector)
+    const {weatherData, searchResult} = useSelector(recipesSelector)
 
     useEffect(() => {
-        dispatch(fetchWeatherData(cityName))
+        dispatch(fetchWeatherData(searchResult ? searchResult : cityName))
     }, [dispatch])
 
     const changeCityName = (name) => {
@@ -22,7 +22,7 @@ const Home = () => {
         <>
             <Header changeCityName={changeCityName} weatherData={weatherData} cityName={cityName}/>
             <div className="d-flex-justify-center-row">
-                <WeatherCard list={weatherData.list}/>
+                <WeatherCard list={weatherData.list} cityName={cityName}/>
             </div>
         </>
     )

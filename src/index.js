@@ -5,7 +5,7 @@ import {App} from "./App";
 import {configureStore} from '@reduxjs/toolkit'
 import "./styles/_global.scss";
 import 'react-toastify/dist/ReactToastify.css';
-import rootReducer from './slices'
+import rootReducer from './slices';
 
 const store = configureStore({reducer: rootReducer})
 

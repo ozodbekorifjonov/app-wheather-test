@@ -41,13 +41,11 @@ export const DataByDay = (data) => {
         resData.push(tempObj)
     }
 
-    const weatherData = {
+    return {
         list: resData,
         cityData: {
             name: data.city.name,
             country: data.city.country,
         }
-    }
-
-    return weatherData;
+    };
 }
