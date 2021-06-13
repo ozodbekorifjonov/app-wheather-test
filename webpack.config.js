@@ -13,7 +13,8 @@ const plugins = [
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin(),
     new HtmlWebpackPlugin({
-        template: "./src/index.html"
+        template: "./src/index.html",
+        favicon: false,
     }),
     new Dotenv()
 ]

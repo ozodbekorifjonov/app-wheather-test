@@ -7,7 +7,7 @@ import {WeatherCard} from "../weather-card/WeatherCard";
 const Home = () => {
 
     const dispatch = useDispatch()
-    const [cityName, setCityName] = useState("Tashkent")
+    const [cityName, setCityName] = useState("California")
     const {weatherData, searchResult} = useSelector(recipesSelector)
 
     useEffect(() => {

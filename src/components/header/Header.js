@@ -33,7 +33,9 @@ export function Header(props) {
             <div>
                 <form onSubmit={handleSubmit} noValidate autoComplete="off" className="form">
                     <div className="d-flex">
-                        <input ref={searchRef} onChange={handleChange} name="search"
+                        <input ref={searchRef}
+                               title="dummySearch"
+                               onChange={handleChange} name="search"
                                className="w-100"
                                placeholder="Search..."/>
                         <button className="search-btn" disabled={!cityName}>

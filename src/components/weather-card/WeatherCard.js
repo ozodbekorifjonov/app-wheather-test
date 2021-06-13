@@ -3,7 +3,6 @@ import {DateToDay, WeatherImage} from "../general";
 import {Link} from "react-router-dom";
 
 export function WeatherCard(props) {
-
     const {list, cityName} = props;
 
     return (
